@@ -1,0 +1,329 @@
+body {
+  color: #004d40;
+}
+
+a {
+  color: #275b86;
+}
+
+.body-container {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.home-container {
+  background: url("../img/site-home.jpg") no-repeat;
+  display: flex;
+  flex: auto;
+  background-size: cover;
+  padding: 100px 0 100px 0;
+}
+
+/*First header*/
+.top-bar {
+  display: flex;
+}
+
+.top-bar-link {
+  padding-right: 8px;
+}
+
+.top-bar-items {
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+
+
+.top-bar-items-logos {
+  margin-left: 20%;
+}
+
+.top-bar-items-right {
+  margin-left: auto;
+}
+
+.edina-logo {
+  margin-bottom: 10%;
+}
+
+.edinburgh-logos {
+  width: 80%;
+  height: auto;
+}
+
+/*Ensure main logo is lined up*/
+.navbar-brand {
+  margin-left: -5%;
+}
+
+.social-icons {
+  margin-top: 0;
+}
+
+.social-media-icon i {
+  color: #004d40;
+}
+
+/*End First header*/
+
+
+/*Header/Nav*/
+header {
+  padding: 15px 0 15px 0;
+}
+
+header .navbar-default .navbar-nav li a {
+  padding: 5px 10px;
+}
+
+/*Override default*/
+
+header .navbar-default .navbar-nav li a {
+  font-size: 1.25em !important;
+}
+
+/* Stop menu items turning black on focus */
+header .navbar-default .navbar-nav li a:focus {
+  color: #f59c5c;
+}
+
+/* Dropdown menu items when focused shouldn't turn white on white */
+header .dropdown-menu li a:focus {
+  background-color: transparent;
+}
+
+/* Step menu items turning black when dropdown open */
+header .navbar-default .navbar-nav .open a, header .navbar-default .navbar-nav .open a:focus {
+  color: #eee;
+}
+
+.schools-header {
+  background: #004d40;
+}
+
+.selected {
+  color: #f59c5c !important;
+}
+
+.dropdown {
+  background: #004d40 !important;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+  color: #bc5100 !important;
+}
+
+.dropdown-menu li a {
+  color: #fff !important;
+}
+
+.dropdown-menu {
+  background: #004d40 !important;
+}
+
+.dropdown-item:hover {
+  background: #b8540a !important;
+}
+
+.button {
+  font-size: 16px;
+  line-height: 25px;
+  color: #fff;
+  border: 2px solid #b8540a;
+  background: #b8540a;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 10px 23px;
+  margin: 0 2px;
+  -webkit-transition: ease 0.2s;
+  -moz-transition: ease 0.2s;
+  transition: ease 0.2s;
+  border-radius: 5px;
+}
+
+.product-button:hover {
+  text-decoration: none;
+  background: none;
+  color: white;
+}
+
+.product-button:focus {
+  background: none;
+  color: #eee;
+}
+
+/*To override default nav behaviour*/
+.subscribe-button {
+  border: 2px solid #004d40;
+  background: #004d40;
+}
+
+.subscribe-button:hover {
+  background: #004d40 !important;
+  color: #b8540a;
+}
+
+.subscribe-button:focus {
+  background: none;
+}
+
+.login-button:hover {
+  background: #b8540a !important;
+  color: #004d40;
+}
+
+.login-button:focus {
+  background: none;
+}
+
+/*End Header/Nav*/
+
+/*Generic panel on home page and Service pages*/
+.text-panel {
+  background-color: rgba(255, 255, 255, 0.95);
+  color: #004d40 !important;
+  border-radius: 10px;
+  border-color: #004d40;
+  border-style: solid;
+  border-width: thin;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.product-tour {
+  margin-top: 1em;
+}
+
+/* Service info pages */
+
+/* padded section */
+.pad-section {
+  padding: 50px 0;
+}
+
+.pad-section img {
+  width: 100%;
+}
+
+.centre {
+  text-align: center;
+}
+
+#information-primary {
+  background: url(../img/primary.jpg) no-repeat center fixed;
+  display: table;
+  position: relative;
+  width: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#information-secondary {
+  background: url(../img/worldpan.png) no-repeat center fixed;
+  display: table;
+  position: relative;
+  width: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#information-international {
+  background: url(../img/info-img.png) no-repeat center fixed;
+  display: table;
+  position: relative;
+  width: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* End Service info pages */
+
+/*About page*/
+blockquote {
+  font-size: 1.4em;
+  /*width:60%;*/
+  margin: 50px auto;
+  font-style: italic;
+  color: #004d40;
+  padding: 1.2em 30px 1.2em 75px;
+  border-left: 8px solid #004d40;
+  line-height: 1.6;
+  position: relative;
+  background: #ededed;
+}
+
+blockquote::before {
+  /*font-family:Arial;*/
+  content: "\201C";
+  color: #004d40;
+  font-size: 4em;
+  position: absolute;
+  left: 10px;
+  top: -10px;
+}
+
+blockquote::after {
+  content: '';
+}
+
+/*End About page*/
+
+/* Community Page */
+
+.iframe-container {
+  display: flex;
+  height: calc(100vh - 300px);
+}
+
+iframe {
+  flex: auto;
+  height: 100%; /* for IE11 */
+}
+
+.filter-options {
+  margin: .1em 0;
+}
+
+.filter-options > .radio-inline {
+  vertical-align: unset;
+}
+
+/* End Community Page */
+
+/*Footer*/
+
+footer p {
+  color: #575757;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  padding: 0em 1.1em 0em 1.1em;
+  text-align: center;
+  align-items: center;
+}
+
+.logo img {
+  margin: auto;
+  width: 100%;
+}
+
+.collins-bart-logo {
+  max-width: 25vw;
+}
+
+/*End Footer*/

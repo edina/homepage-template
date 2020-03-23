@@ -1,0 +1,23 @@
+- title: Home
+  url: /
+- title: About
+  url: /about/
+- title: Product Info
+  url: /international/
+  sublinks:
+    - title: For International
+      url: /international/
+    - title: For Global
+      url: /global/
+- title: Free External
+  url: http://example.com/
+- title: Buy
+  url: /buy/
+- title: Need Help?
+  sublinks:
+    - title: FAQs
+      url: /faqs/
+    - title: Blog
+      url: http://example.com/
+    - title: Contact Us
+      url: /contact/

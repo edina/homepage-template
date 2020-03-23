@@ -1,0 +1,87 @@
+---
+layout: content-page
+title: Login to Someplace Remote
+permalink: /login/
+---
+
+<script>
+  $(document).ready(function () {
+
+    // Force page refresh if we navigate here via history
+    $(window).on('popstate', function () {
+      location.reload(true);
+    });
+
+    if (window.location.search === '?error=login') {
+      $('#login-form').show();
+      $('#login-error').show();
+    } else {
+      $.getJSON('/some-remote-url', function (response) {
+        if (response.loggedIn === true) {
+          $('#go-to-sample-form').attr('action', '/' + response.context);
+          $('#logged-into-sample').show();
+        } else {
+          $('#login-form').show();
+        }
+      }).fail(function () {
+        $('#error-contacting-sample').show();
+      });
+    }
+  });
+</script>
+
+<div class="flex-container">
+
+  <div>
+    <form class="form-horizontal" action="/some-remote-url/login" id="login-form" method="post"
+          name="loginForm" role="form" style="display:none">
+
+      <div class="form-group" id="login-error" style="display:none">
+        <div class="bg-danger col-sm-offset-3 col-sm-6">
+          There was a problem logging in. Please check your username and password before trying again.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="username" class="col-sm-offset-2 col-sm-2 control-label">Username</label>
+        <div class="col-sm-4">
+          <input class="form-control" id="username" name="username" oninput="setCustomValidity('')"
+          oninvalid="this.setCustomValidity('Please enter your username')" placeholder="Username"
+          required type="text" autofocus autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="password" class="col-sm-offset-2 col-sm-2 control-label">Password</label>
+        <div class="col-sm-4">
+          <input class="form-control" id="password" name="password" oninput="setCustomValidity('')"
+                  oninvalid="this.setCustomValidity('Please enter your password')" placeholder="Password"
+                  required type="password">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-4 col-sm-4">
+            <button class="button login-button" form="login-form" type="submit" value="Submit">Log In</button>
+        </div>
+      </div>
+    </form>
+
+    <div id="logged-into-sample" class="col-sm-offset-3 col-sm-8" style="display:none">
+      <p>You are already signed into wherever you were just attempting. You can go to the service:</p>
+      <form action="" id="go-to-sample-form" method="get" name="goTosampleForm" role="form">
+        <button form="go-to-sample-form" type="submit" value="Submit" class="button login-button">Go to Sample Location</button>
+      </form>
+
+      <p>Or you can log out:</p>
+      <form action="/some-remote-url/logout" id="logout-form" method="post" name="logoutForm" role="form">
+        <button form="logout-form" type="submit" value="Submit" class="button subscribe-button">Log Out</button>
+      </form>
+    </div>
+
+    <div id="error-contacting-sample" class="col-sm-offset-3 col-sm-8" style="display:none">
+      Could not contact sample location at this moment. Please try later.
+    </div>
+    
+  </div>
+
+</div>
+

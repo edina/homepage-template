@@ -1,0 +1,29 @@
+
+exclude:
+  - "/vendor/"
+  - "Gemfile"
+  - "Gemfile.lock"
+  - "README.md"
+  - "LICENSE.md"
+  - "*.gemspec"
+  - "docker"
+
+keep_files:
+  - "CNAME"
+  - ".git"
+  - ".gitignore"
+
+
+# Site settings
+title: Template website
+subtitle: "Obviously this is just a template for now"
+url: "https://github.com/edina/homepage-template"
+baseurl: ""
+cover: "/assets/cover.png"
+logo: "/assets/logo.png"
+
+# Build settings
+markdown: kramdown
+
+# Google analytics
+# ga_tracking_id: "UA-XXXX-1"

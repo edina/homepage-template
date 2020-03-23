@@ -1,0 +1,41 @@
+---
+layout: content-page-no-container
+---
+
+<!-- first section - Information -->
+<div id="{{ page.background-css-id }}" class="pad-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="text-panel">
+            {% contentblock panel-1 %}
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="text-panel">
+            {% contentblock panel-2 %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /second section -->
+
+
+<!-- second section - quote -->
+<div id="about" class="pad-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <img src="/img/{{ page.image }}" class="img-responsive" alt="Images of maps">
+      </div>
+      <div class="col-sm-6 text-center">
+        <!--Note use of no-convert to treat source as plain text in this instance-->
+        <h3><q>{% contentblock quote no-convert %}</q></h3>
+        <p class="lead">{% contentblock quote-attribution no-convert %}</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /second section -->
+
